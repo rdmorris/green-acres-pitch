@@ -291,6 +291,83 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 }
 .comparison-col li:last-child { border-bottom: none; }
 
+/* --- Merch Section Upgrades --- */
+.merch-pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.merch-step {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 40px 24px 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  position: relative;
+  border-top: 6px solid var(--accent-green);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-step:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.merch-step:nth-child(2) { border-top-color: var(--secondary); }
+.merch-step:nth-child(3) { border-top-color: var(--tertiary); }
+
+.merch-graphic {
+  width: 80px;
+  height: 80px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: var(--accent-green);
+}
+.merch-step:nth-child(2) .merch-graphic { color: var(--secondary); background: #fff3e0;}
+.merch-step:nth-child(3) .merch-graphic { color: var(--tertiary); background: #efebe9;}
+
+.merch-step h3 {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.merch-data-box {
+  background: #f9f8f3;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.merch-data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #e8e5d8;
+  padding-bottom: 12px;
+}
+.merch-data-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.merch-data-label { font-weight: 600; color: var(--text); }
+.merch-data-value { color: var(--muted); text-align: right; }
+
+.merch-step p { font-size: 0.85rem; text-align: center; margin-bottom: 0; }
+
 /* --- CTA --- */
 .cta {
   background: var(--primary);
@@ -415,15 +492,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 
 .guarantee p { margin-bottom: 0; font-size: 0.9rem; }
 
-/* --- Divider --- */
-.divider {
-  width: 60px;
-  height: 3px;
-  background: var(--secondary);
-  border-radius: 2px;
-  margin-bottom: 32px;
-}
-
 /* --- Responsive --- */
 @media (max-width: 700px) {
   .cover h1 { font-size: 2.25rem; }
@@ -443,7 +511,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 </head>
 <body>
 
-<!-- Cover -->
 <div class="cover">
   <img src="logo-large.png" alt="Green Acres Farm" style="height: 100px; margin-bottom: 24px;  opacity: 0.9;" />
   <div class="label">Proposal</div>
@@ -459,7 +526,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   <p class="prepared">Prepared April 2026</p>
 </div>
 
-<!-- The Opportunity -->
 <section>
   <div class="container">
     <div class="section-label">The Opportunity</div>
@@ -490,7 +556,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- The Problem -->
 <section>
   <div class="container">
     <div class="section-label">Current State</div>
@@ -525,14 +590,12 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- What's Been Built -->
 <section>
   <div class="container">
     <div class="section-label">The Platform</div>
     <h2>What's Already Built</h2>
     <p class="lead">This isn't a mockup or a proposal for future work. The platform is live, functional, and ready to deploy.</p>
 
-    <!-- Seasonal Attractions Strip -->
     <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 40px; padding: 24px;">
       <div style="text-align: center;">
         <img src="tulip-patch.png" alt="Tulips" style="height: 72px;" />
@@ -593,7 +656,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- Revenue Projections -->
 <section>
   <div class="container">
     <div class="section-label">Revenue Projections</div>
@@ -646,20 +708,18 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- The Brand Value -->
 <section>
   <div class="container">
     <div class="section-label">Brand Value</div>
     <h2>Why Branding Matters More Than You Think</h2>
 
-    <!-- Merch Showcase -->
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; padding: 32px; background: white; border-radius: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.04);">
       <img src="Green-Acres-T.png" alt="Green Acres Tee" style="height: 120px; object-fit: contain;" />
       <img src="Pumpkin-Hoodie.jpg" alt="Pumpkin Hoodie" style="height: 120px; object-fit: contain;" />
       <img src="Corn-Mazing-Hat.png" alt="Corn Maze Hat" style="height: 120px; object-fit: contain;" />
       <img src="Tulip-Shirt.png" alt="Tulip Long Sleeve" style="height: 120px; object-fit: contain;" />
       <img src="Pumpkin-Beenie.png" alt="Pumpkin Beanie" style="height: 120px; object-fit: contain;" />
-      <img src="Straberry-Shirt.png" alt="Strawberry Sweatshirt" style="height: 120px; object-fit: contain;" />
+      <img src="Strawberry-Shirt.png" alt="Strawberry Sweatshirt" style="height: 120px; object-fit: contain;" />
     </div>
 
     <div class="card-grid">
@@ -682,7 +742,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- Email List Value -->
 <section>
   <div class="container">
     <div class="section-label">The Email List</div>
@@ -722,7 +781,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- About the Developer -->
 <section>
   <div class="container">
     <div class="section-label">Who I Am</div>
@@ -732,113 +790,119 @@ p.lead { font-size: 1.125rem; color: var(--text); }
       <img src="roger-morris.jpg" alt="Roger Morris" class="about-photo" />
       <div class="about-content">
         <div class="name">Roger Morris</div>
-        <div class="title">Developer &bull; West Tennessee</div>
-        <p>I'm a West Tennessee local &mdash; born and raised in McKenzie, TN. Graduated from McKenzie High School and Bethel University, right here in McKenzie. This isn't a big-city agency pitch. I'm your neighbor.</p>
-        <p>I specialize in building practical, revenue-focused digital tools for local small businesses and farms. Not flashy designs that win awards and do nothing &mdash; but systems that actually make money: online ticketing, merch stores, customer lists, admin dashboards.</p>
-        <p>I built this complete Green Acres platform as a live, working demo because I believe in showing value upfront instead of just talking about it. Everything you've seen in this proposal is already built and running.</p>
-        <p>I'm offering this as a true one-time project with <strong>no ongoing monthly developer fees from me</strong>. You only pay the normal low costs of the tools (Vercel, Turso, Stripe, Resend, etc.), which stay under $75/month. No retainers, no hidden fees, no surprises.</p>
+        <div class="title">Local Developer • McKenzie, TN</div>
+        <p>I'm a West Tennessee local — born and raised in McKenzie. I graduated from McKenzie High School and Bethel University, right here in our community. This isn't a big-city agency pitch. I'm your neighbor who understands how family farms operate in West TN.</p>
+        <p>I build practical digital tools that help small businesses like Green Acres turn social media followers into real, year-round revenue — online ticketing, merch stores, customer lists, and simple admin systems that actually get used.</p>
+        <p>I created this complete platform as a live, working demo specifically for Green Acres because I saw the untapped potential in your strong local following. Everything in this proposal is already built and ready to launch.</p>
+        <p>I'm offering this as a true one-time project with <strong>no monthly developer fees from me</strong>. You only pay the normal low costs of the tools, which stay under $75/month total.</p>
         <p style="margin-top: 24px; margin-bottom: 0;">
-          <a href="mailto:rdmorris@gmail.com" class="contact-link">rdmorris@gmail.com</a>
-          <span style="color: var(--muted); margin: 0 12px;">&bull;</span>
-          <span style="color: var(--muted); font-size: 0.9rem;">Happy to meet at the farm or hop on a quick call</span>
+          <strong>Contact me directly:</strong><br>
+          <a href="mailto:rdmorris@gmail.com" class="contact-link">rdmorris@gmail.com</a><br>
+          Happy to meet at the farm, hop on a quick call, or answer any questions.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Your Investment -->
 <section>
   <div class="container">
     <div class="section-label">Your Investment</div>
-    <h2>Everything You Need. One Price.</h2>
+    <h2>Everything You Need. One Simple Price.</h2>
 
     <div class="offer-box">
       <div class="price">$5,500</div>
-      <div class="price-label">One-time setup fee &mdash; no monthly developer costs, ever</div>
+      <div class="price-label">One-time setup fee — No monthly developer fees, ever</div>
       <ul class="includes">
-        <li>Complete modern rebrand with custom design system</li>
-        <li>Fully built responsive website (already live in demo)</li>
-        <li>Online ticketing with QR scanning &amp; capacity management</li>
-        <li>Merch store with Stripe payments &amp; shipping</li>
-        <li>Admin dashboard for tickets, orders, inventory &amp; events</li>
-        <li>Email &amp; SMS mailing list with TCPA-compliant opt-in</li>
-        <li>Branded HTML email confirmations</li>
-        <li>Domain setup or transfer if needed</li>
-        <li>Deployment to production</li>
-        <li>One training session to walk through everything</li>
-        <li>30 days of post-launch support &amp; tweaks</li>
+        <li>Complete modern rebrand and custom design system</li>
+        <li>Fully built responsive website (already live in demo form)</li>
+        <li>Online ticketing system with QR scanning and capacity management</li>
+        <li>Merch store with Stripe payments and shipping</li>
+        <li>Admin dashboard for tickets, orders, inventory, and events</li>
+        <li>Email + SMS list building with compliant opt-in</li>
+        <li>Branded HTML email confirmations and tickets</li>
+        <li>Domain setup or transfer (if needed)</li>
+        <li>Deployment, training session, and 30 days of post-launch support</li>
       </ul>
     </div>
 
-    <!-- Payment Terms -->
     <div class="stat-grid" style="margin-top: 32px;">
       <div class="stat">
         <div class="number">$2,750</div>
-        <div class="label">50% Deposit to Start</div>
+        <div class="label">50% Deposit</div>
       </div>
       <div class="stat">
         <div class="number">$2,750</div>
-        <div class="label">Balance When Live</div>
+        <div class="label">Balance on Launch</div>
       </div>
     </div>
 
-    <!-- Agency Comparison -->
-    <h3 style="margin-top: 48px; margin-bottom: 8px;">How This Compares</h3>
-    <p>If you hired an agency or freelancers to build each piece separately:</p>
+    <h3 style="margin-top: 48px; margin-bottom: 12px;">How This Compares — Detailed Breakdown</h3>
+    <p>Here's what it would typically cost to build the same features piece-by-piece through freelancers or agencies in 2026. These are realistic mid-range quotes for custom work (not cheap templates or basic DIY tools).</p>
 
     <table class="revenue-table">
       <thead>
         <tr>
           <th>Component</th>
-          <th>Typical Agency Cost</th>
+          <th>Typical Cost if Hired Separately</th>
+          <th>What's Included in My Offer</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Custom website design &amp; development</td>
-          <td>$8,000 &ndash; $15,000</td>
+          <td><strong>Custom Website Design & Development</strong><br>(responsive, branded, seasonal content)</td>
+          <td>$8,000 – $15,000</td>
+          <td>Fully built and ready</td>
         </tr>
         <tr>
-          <td>Online ticketing system with QR codes</td>
-          <td>$3,000 &ndash; $5,000</td>
+          <td><strong>Online Ticketing System</strong><br>(date selection, capacity management, QR code tickets)</td>
+          <td>$3,000 – $7,000</td>
+          <td>Fully built with QR scanner</td>
         </tr>
         <tr>
-          <td>E-commerce store with payments</td>
-          <td>$3,000 &ndash; $5,000</td>
+          <td><strong>Merch / E-commerce Store</strong><br>(product catalog, sizes, Stripe checkout, shipping)</td>
+          <td>$3,000 – $6,000</td>
+          <td>Fully built with 8+ products live</td>
         </tr>
         <tr>
-          <td>Admin dashboard &amp; CMS</td>
-          <td>$3,000 &ndash; $5,000</td>
+          <td><strong>Admin Dashboard</strong><br>(manage tickets, orders, inventory, food trucks)</td>
+          <td>$3,000 – $8,000</td>
+          <td>Fully built and functional</td>
         </tr>
         <tr>
-          <td>Brand identity &amp; design system</td>
-          <td>$2,000 &ndash; $5,000</td>
+          <td><strong>Brand Identity & Design System</strong><br>(colors, typography, consistent visuals across site/emails/tickets)</td>
+          <td>$2,000 – $6,000</td>
+          <td>Complete custom rebrand</td>
         </tr>
         <tr>
-          <td>Email templates, mailing list &amp; inventory</td>
-          <td>$2,500 &ndash; $6,000</td>
+          <td><strong>Email + SMS List Tools & Templates</strong><br>(branded confirmations, opt-ins, marketing blasts)</td>
+          <td>$2,000 – $5,000</td>
+          <td>Built-in and ready</td>
+        </tr>
+        <tr>
+          <td><strong>QR Code Scanner for Gate Staff</strong><br>(mobile browser-based validation)</td>
+          <td>$1,500 – $4,000</td>
+          <td>Fully built and tested</td>
         </tr>
         <tr class="total">
-          <td>Total Comparable Value</td>
-          <td>$21,500 &ndash; $41,000</td>
+          <td><strong>Total Comparable Value</strong></td>
+          <td><strong>$22,500 – $51,000</strong></td>
+          <td>All included for $5,500 one-time</td>
         </tr>
       </tbody>
     </table>
 
-    <p style="margin-top: 24px;">Plus most agencies charge monthly retainers of $500&ndash;$2,000 for hosting, maintenance, and updates. And ticketing platforms like Eventbrite take 3.7% + $1.79 per ticket. <strong>With this setup, you keep everything.</strong></p>
+    <p style="margin-top: 24px;">Most agencies would also add ongoing monthly retainers of $500–$2,000 for hosting, updates, and support. With my offer, there are <strong>no developer fees afterward</strong> — you only pay normal low infrastructure costs (under $75/month total). You own the full platform outright.</p>
 
-    <!-- Risk Reversal -->
-    <div class="guarantee">
-      <div class="shield">&check;</div>
+    <div class="guarantee" style="margin-top: 40px;">
+      <div class="shield">✓</div>
       <div>
-        <p><strong style="color: var(--primary);">Zero Risk.</strong> If after reviewing the live demo together it's not the right fit for Green Acres, I'll take it down at no cost. No hard feelings, no invoice. I only want this to move forward if it's a clear win for the farm.</p>
+        <p><strong>Zero Risk for Green Acres.</strong> If we review the live demo together and it’s not the right fit, I’ll take it down at no cost. No invoice, no hard feelings. I only want this to move forward if it’s clearly good for the farm.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Ongoing Costs -->
 <section>
   <div class="container">
     <div class="section-label">Operating Costs</div>
@@ -891,7 +955,89 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- ROI -->
+<section>
+  <div class="container">
+    <div class="section-label">Merch Operations</div>
+    <h2>Zero-Risk Merch & Fulfillment Blueprint</h2>
+    <p class="lead">The e-commerce store is fully integrated. Here is the clear path to generating a highly profitable, off-season revenue stream without holding expensive inventory or complicating farm operations.</p>
+
+    <div class="merch-pipeline">
+      
+      <div class="merch-step">
+        <div class="merch-graphic">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/>
+          </svg>
+        </div>
+        <h3>1. Cost to Produce</h3>
+        <div class="merch-data-box">
+          <div class="merch-data-row">
+            <span class="merch-data-label">T-Shirts</span>
+            <span class="merch-data-value">$8 &ndash; $14</span>
+          </div>
+          <div class="merch-data-row">
+            <span class="merch-data-label">Hoodies</span>
+            <span class="merch-data-value">$18 &ndash; $28</span>
+          </div>
+          <div class="merch-data-row">
+            <span class="merch-data-label">Hats & Beanies</span>
+            <span class="merch-data-value">$6 &ndash; $12</span>
+          </div>
+        </div>
+        <p>These are premium landed costs via my local/regional connections. Once designs are proven, ordering small batches drops your production costs by up to 40%.</p>
+      </div>
+
+      <div class="merch-step">
+        <div class="merch-graphic">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2" ry="2"/>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3>2. Simple Fulfillment</h3>
+        <div class="merch-data-box" style="display: flex; flex-direction: column; justify-content: center;">
+          <div class="merch-data-row">
+            <span class="merch-data-label" style="color: var(--secondary);">Phase 1: Print-On-Demand</span>
+          </div>
+          <p style="text-align: left; margin-bottom: 12px; font-size: 0.85rem; color: var(--muted);">Zero inventory. Orders hit the site, get printed off-site, and ship directly to the customer. No boxes in your living room.</p>
+          <div class="merch-data-row">
+            <span class="merch-data-label" style="color: var(--secondary);">Phase 2: Local Batching</span>
+          </div>
+          <p style="text-align: left; margin-bottom: 0; font-size: 0.85rem; color: var(--muted);">Store high-sellers locally to push better margins while managing orders cleanly from the admin dashboard.</p>
+        </div>
+      </div>
+
+      <div class="merch-step">
+        <div class="merch-graphic">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>3. Margins & Profit</h3>
+        <div class="merch-data-box">
+          <div class="merch-data-row">
+            <span class="merch-data-label">T-Shirts</span>
+            <span class="merch-data-value">Sell @ $28 &ndash; $35</span>
+          </div>
+          <div class="merch-data-row">
+            <span class="merch-data-label">Hoodies</span>
+            <span class="merch-data-value">Sell @ $48 &ndash; $65</span>
+          </div>
+          <div class="merch-data-row">
+            <span class="merch-data-label">Gross Margin</span>
+            <span class="merch-data-value" style="color: var(--accent-green); font-weight: 700;">40% &ndash; 60%+</span>
+          </div>
+        </div>
+        <p>Premium branding lets you set authentic "souvenir" pricing. Holiday drops pushed to your new email list can drive high-margin sales all winter.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="section-label">Return on Investment</div>
@@ -918,7 +1064,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- The Experience -->
 <section>
   <div class="container">
     <div class="section-label">The Experience</div>
@@ -955,7 +1100,6 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- CTA -->
 <div class="cta">
   <img src="logo-large.png" alt="Green Acres Farm" style="height: 72px; opacity: 0.6; margin-bottom: 24px;" />
   <h2>This Platform Is Ready to Launch</h2>
@@ -963,6 +1107,5 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   <a href="https://green-acres-vert.vercel.app/" target="_blank" rel="noopener noreferrer" class="cta-button" style="margin-top: 8px;">View the Live Site</a>
   <p style="color: rgba(255,255,255,0.6); font-size: 0.875rem; margin-top: 32px;">Green Acres Farm &bull; Milan, Tennessee</p>
 </div>
-
 </body>
 </html>
