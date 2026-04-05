@@ -316,6 +316,105 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 
 .cta-button:hover { transform: translateY(-2px); }
 
+/* --- About --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 32px;
+}
+
+.about-photo {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.about-content { line-height: 1.7; }
+.about-content p { margin-bottom: 14px; font-size: 0.95rem; }
+.about-content .name { font-family: 'Newsreader', serif; font-size: 1.75rem; color: var(--primary); margin-bottom: 4px; }
+.about-content .title { font-size: 0.85rem; color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+.about-content .contact-link { color: var(--primary); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--secondary); }
+.about-content .contact-link:hover { color: var(--secondary); }
+
+/* --- Offer --- */
+.offer-box {
+  background: var(--primary);
+  color: white;
+  border-radius: 20px;
+  padding: 48px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.offer-box .price {
+  font-family: 'Newsreader', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.offer-box .price-label {
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 24px;
+}
+
+.offer-box .includes {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.offer-box .includes li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.9rem;
+  opacity: 0.9;
+  padding-left: 24px;
+  position: relative;
+}
+
+.offer-box .includes li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #8ddb90;
+  font-weight: 700;
+}
+
+.offer-box .includes li:last-child { border-bottom: none; }
+
+.guarantee {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.guarantee .shield {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #e8f5e9;
+  color: var(--accent-green);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.guarantee p { margin-bottom: 0; font-size: 0.9rem; }
+
 /* --- Divider --- */
 .divider {
   width: 60px;
@@ -329,7 +428,9 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 @media (max-width: 700px) {
   .cover h1 { font-size: 2.25rem; }
   h2 { font-size: 1.75rem; }
-  .feature-grid, .comparison { grid-template-columns: 1fr; }
+  .feature-grid, .comparison, .about-grid { grid-template-columns: 1fr; }
+  .about-photo { max-width: 200px; margin: 0 auto; }
+  .offer-box .price { font-size: 3rem; }
   .stat .number { font-size: 2rem; }
   section { padding: 56px 0; }
 }
@@ -344,7 +445,7 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 
 <!-- Cover -->
 <div class="cover">
-  <img src="logo-large.png" alt="Green Acres Farm" style="height: 100px; margin-bottom: 24px; opacity: 0.9;" />
+  <img src="logo-large.png" alt="Green Acres Farm" style="height: 100px; margin-bottom: 24px; filter: brightness(0) invert(1); opacity: 0.9;" />
   <div class="label">Proposal</div>
   <h1>Green Acres Farm</h1>
   <p class="subtitle">A digital platform to convert 39,000 followers into year-round customers, build a real brand, and unlock new revenue streams.</p>
@@ -621,12 +722,70 @@ p.lead { font-size: 1.125rem; color: var(--text); }
   </div>
 </section>
 
-<!-- Comparable Value -->
+<!-- About the Developer -->
 <section>
   <div class="container">
-    <div class="section-label">Investment</div>
-    <h2>What This Would Cost Elsewhere</h2>
-    <p class="lead">If you hired an agency or freelancers to build each piece of this platform separately, here's what you'd be looking at:</p>
+    <div class="section-label">Who I Am</div>
+    <h2>About the Developer</h2>
+
+    <div class="about-grid">
+      <img src="roger-morris.jpg" alt="Roger Morris" class="about-photo" />
+      <div class="about-content">
+        <div class="name">Roger Morris</div>
+        <div class="title">Developer &bull; West Tennessee</div>
+        <p>I'm a West Tennessee local &mdash; born and raised in McKenzie, TN. Graduated from McKenzie High School and Bethel University, right here in McKenzie. This isn't a big-city agency pitch. I'm your neighbor.</p>
+        <p>I specialize in building practical, revenue-focused digital tools for local small businesses and farms. Not flashy designs that win awards and do nothing &mdash; but systems that actually make money: online ticketing, merch stores, customer lists, admin dashboards.</p>
+        <p>I built this complete Green Acres platform as a live, working demo because I believe in showing value upfront instead of just talking about it. Everything you've seen in this proposal is already built and running.</p>
+        <p>I'm offering this as a true one-time project with <strong>no ongoing monthly developer fees from me</strong>. You only pay the normal low costs of the tools (Vercel, Turso, Stripe, Resend, etc.), which stay under $75/month. No retainers, no hidden fees, no surprises.</p>
+        <p style="margin-top: 24px; margin-bottom: 0;">
+          <a href="mailto:rdmorris@gmail.com" class="contact-link">rdmorris@gmail.com</a>
+          <span style="color: var(--muted); margin: 0 12px;">&bull;</span>
+          <span style="color: var(--muted); font-size: 0.9rem;">Happy to meet at the farm or hop on a quick call</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Your Investment -->
+<section>
+  <div class="container">
+    <div class="section-label">Your Investment</div>
+    <h2>Everything You Need. One Price.</h2>
+
+    <div class="offer-box">
+      <div class="price">$5,500</div>
+      <div class="price-label">One-time setup fee &mdash; no monthly developer costs, ever</div>
+      <ul class="includes">
+        <li>Complete modern rebrand with custom design system</li>
+        <li>Fully built responsive website (already live in demo)</li>
+        <li>Online ticketing with QR scanning &amp; capacity management</li>
+        <li>Merch store with Stripe payments &amp; shipping</li>
+        <li>Admin dashboard for tickets, orders, inventory &amp; events</li>
+        <li>Email &amp; SMS mailing list with TCPA-compliant opt-in</li>
+        <li>Branded HTML email confirmations</li>
+        <li>Domain setup or transfer if needed</li>
+        <li>Deployment to production</li>
+        <li>One training session to walk through everything</li>
+        <li>30 days of post-launch support &amp; tweaks</li>
+      </ul>
+    </div>
+
+    <!-- Payment Terms -->
+    <div class="stat-grid" style="margin-top: 32px;">
+      <div class="stat">
+        <div class="number">$2,750</div>
+        <div class="label">50% Deposit to Start</div>
+      </div>
+      <div class="stat">
+        <div class="number">$2,750</div>
+        <div class="label">Balance When Live</div>
+      </div>
+    </div>
+
+    <!-- Agency Comparison -->
+    <h3 style="margin-top: 48px; margin-bottom: 8px;">How This Compares</h3>
+    <p>If you hired an agency or freelancers to build each piece separately:</p>
 
     <table class="revenue-table">
       <thead>
@@ -657,16 +816,8 @@ p.lead { font-size: 1.125rem; color: var(--text); }
           <td>$2,000 &ndash; $5,000</td>
         </tr>
         <tr>
-          <td>Email template design &amp; integration</td>
-          <td>$1,000 &ndash; $2,000</td>
-        </tr>
-        <tr>
-          <td>Mailing list &amp; SMS opt-in system</td>
-          <td>$500 &ndash; $1,500</td>
-        </tr>
-        <tr>
-          <td>Inventory management system</td>
-          <td>$1,000 &ndash; $2,500</td>
+          <td>Email templates, mailing list &amp; inventory</td>
+          <td>$2,500 &ndash; $6,000</td>
         </tr>
         <tr class="total">
           <td>Total Comparable Value</td>
@@ -675,7 +826,15 @@ p.lead { font-size: 1.125rem; color: var(--text); }
       </tbody>
     </table>
 
-    <p style="margin-top: 24px;">Plus most agencies charge monthly retainers of $500&ndash;$2,000 for hosting, maintenance, and updates. And many ticketing platforms like Eventbrite take 3&ndash;5% of every sale.</p>
+    <p style="margin-top: 24px;">Plus most agencies charge monthly retainers of $500&ndash;$2,000 for hosting, maintenance, and updates. And ticketing platforms like Eventbrite take 3.7% + $1.79 per ticket. <strong>With this setup, you keep everything.</strong></p>
+
+    <!-- Risk Reversal -->
+    <div class="guarantee">
+      <div class="shield">&check;</div>
+      <div>
+        <p><strong style="color: var(--primary);">Zero Risk.</strong> If after reviewing the live demo together it's not the right fit for Green Acres, I'll take it down at no cost. No hard feelings, no invoice. I only want this to move forward if it's a clear win for the farm.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -798,7 +957,7 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 
 <!-- CTA -->
 <div class="cta">
-  <img src="logo-large.png" alt="Green Acres Farm" style="height: 72px; opacity: 0.6; margin-bottom: 24px;" />
+  <img src="logo-large.png" alt="Green Acres Farm" style="height: 72px; filter: brightness(0) invert(1); opacity: 0.6; margin-bottom: 24px;" />
   <h2>This Platform Is Ready to Launch</h2>
   <p>Every feature described in this proposal is built, tested, and ready to deploy. The only thing missing is the green light.</p>
   <a href="https://green-acres-vert.vercel.app/" target="_blank" rel="noopener noreferrer" class="cta-button" style="margin-top: 8px;">View the Live Site</a>
