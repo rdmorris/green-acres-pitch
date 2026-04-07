@@ -492,11 +492,127 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 
 .guarantee p { margin-bottom: 0; font-size: 0.9rem; }
 
+/* --- Option Cards --- */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.option-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.option-card .option-header {
+  padding: 32px 28px 24px;
+  text-align: center;
+}
+
+.option-card .option-header.green { background: var(--primary); color: white; }
+.option-card .option-header.orange { background: var(--secondary); color: white; }
+
+.option-card .option-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.option-card .option-price {
+  font-family: 'Newsreader', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.option-card .option-price-sub {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.option-card .option-body {
+  background: var(--card);
+  padding: 28px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-card .option-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.option-card .option-body li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0edd8;
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding-left: 22px;
+  position: relative;
+}
+
+.option-card .option-body li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.option-card .option-body li:last-child { border-bottom: none; }
+
+.option-card .option-body .option-note {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f9f8f3;
+  border-radius: 12px;
+  font-size: 0.825rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.option-card .option-body .option-note strong { color: var(--text); }
+
+.option-or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 8px;
+  gap: 16px;
+}
+
+.option-or span {
+  font-family: 'Newsreader', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.option-or::before, .option-or::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0ddd0;
+}
+
 /* --- Responsive --- */
 @media (max-width: 700px) {
   .cover h1 { font-size: 2.25rem; }
   h2 { font-size: 1.75rem; }
-  .feature-grid, .comparison, .about-grid { grid-template-columns: 1fr; }
+  .feature-grid, .comparison, .about-grid, .option-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 200px; margin: 0 auto; }
   .offer-box .price { font-size: 3rem; }
   .stat .number { font-size: 2rem; }
@@ -808,33 +924,65 @@ p.lead { font-size: 1.125rem; color: var(--text); }
 <section>
   <div class="container">
     <div class="section-label">Your Investment</div>
-    <h2>Everything You Need. One Simple Price.</h2>
+    <h2>Two Ways to Get Started</h2>
+    <p class="lead">Choose whichever model fits best. Both include the exact same platform, features, and support.</p>
 
-    <div class="offer-box">
-      <div class="price">$5,500</div>
-      <div class="price-label">One-time setup fee — No monthly developer fees, ever</div>
-      <ul class="includes">
-        <li>Complete modern rebrand and custom design system</li>
-        <li>Fully built responsive website (already live in demo form)</li>
-        <li>Online ticketing system with QR scanning and capacity management</li>
-        <li>Merch store with Stripe payments and shipping</li>
-        <li>Admin dashboard for tickets, orders, inventory, and events</li>
-        <li>Email + SMS list building with compliant opt-in</li>
-        <li>Branded HTML email confirmations and tickets</li>
-        <li>Domain setup or transfer (if needed)</li>
-        <li>Deployment, training session, and 30 days of post-launch support</li>
-      </ul>
+    <div class="option-grid">
+      <!-- Option A: One-Time -->
+      <div class="option-card">
+        <div class="option-header green">
+          <div class="option-label">Option A</div>
+          <div class="option-price">$5,500</div>
+          <div class="option-price-sub">One-time fee &mdash; own it outright</div>
+        </div>
+        <div class="option-body">
+          <ul>
+            <li>Complete modern rebrand and design system</li>
+            <li>Fully built responsive website</li>
+            <li>Online ticketing with QR scanning</li>
+            <li>Merch store with Stripe payments</li>
+            <li>Admin dashboard for everything</li>
+            <li>Email + SMS list building</li>
+            <li>Domain setup, deployment, training</li>
+            <li>30 days of post-launch support</li>
+          </ul>
+          <div class="option-note">
+            <strong>$2,750 deposit</strong> to finalize and launch<br />
+            <strong>$2,750 balance</strong> when the site goes live
+          </div>
+        </div>
+      </div>
+
+      <!-- Option B: Revenue Share -->
+      <div class="option-card">
+        <div class="option-header orange">
+          <div class="option-label">Option B</div>
+          <div class="option-price">$0 Upfront</div>
+          <div class="option-price-sub">12% revenue share for 3 years</div>
+        </div>
+        <div class="option-body">
+          <ul>
+            <li>Everything in Option A &mdash; same platform</li>
+            <li>12% of online revenue (tickets + merch)</li>
+            <li>3-year term, then you own it 100%</li>
+            <li>Revenue tracked via Stripe (full transparency)</li>
+            <li>I stay invested in the platform's success</li>
+            <li>Ongoing improvements included during the term</li>
+            <li>Buyout anytime for a flat $8,000</li>
+            <li>If the site earns $0, you owe $0</li>
+          </ul>
+          <div class="option-note">
+            At projected $110K/yr online revenue:<br />
+            <strong>You keep ~$97K</strong> &mdash; I earn ~$13K
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="stat-grid" style="margin-top: 32px;">
-      <div class="stat">
-        <div class="number">$2,750</div>
-        <div class="label">50% Deposit</div>
-      </div>
-      <div class="stat">
-        <div class="number">$2,750</div>
-        <div class="label">Balance on Launch</div>
-      </div>
+    <div class="option-or"><span>Both options include</span></div>
+
+    <div class="card" style="text-align: center; padding: 28px 32px; margin-top: 0;">
+      <p style="margin-bottom: 0; font-size: 0.95rem;">The full platform, complete rebrand, online ticketing, merch store, admin dashboard, mailing list tools, email templates, domain setup, deployment, one training session, and 30 days of post-launch support. <strong>No monthly developer fees from me &mdash; ever.</strong> You only pay normal infrastructure costs (under $75/mo).</p>
     </div>
 
     <h3 style="margin-top: 48px; margin-bottom: 12px;">How This Compares — Detailed Breakdown</h3>
@@ -895,9 +1043,9 @@ p.lead { font-size: 1.125rem; color: var(--text); }
     <p style="margin-top: 24px;">Most agencies would also add ongoing monthly retainers of $500–$2,000 for hosting, updates, and support. With my offer, there are <strong>no developer fees afterward</strong> — you only pay normal low infrastructure costs (under $75/month total). You own the full platform outright.</p>
 
     <div class="guarantee" style="margin-top: 40px;">
-      <div class="shield">✓</div>
+      <div class="shield">&check;</div>
       <div>
-        <p><strong>Zero Risk for Green Acres.</strong> If we review the live demo together and it’s not the right fit, I’ll take it down at no cost. No invoice, no hard feelings. I only want this to move forward if it’s clearly good for the farm.</p>
+        <p><strong style="color: var(--primary);">Zero Risk &mdash; Either Option.</strong> If we review the live demo together and it’s not the right fit, I’ll take it down at no cost. No invoice, no hard feelings. And with the revenue share, there’s truly nothing to lose &mdash; I only earn when the platform earns for you.</p>
       </div>
     </div>
   </div>
